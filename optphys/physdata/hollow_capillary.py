@@ -17,12 +17,11 @@ def calc_mode(nu, a, n, m, lamb, r, theta, dA, theta0=0):
     Bell System Technical Journal, 1964, 43, 1783-1809
 
     Args:
-        nu: refractive index?
+        nu: refractive index of wall
         a: radius
-        n:
-        m:
-        theta0:
-        lamb:
+        n: order, if 0 then TE (m>0) or TM (m<0)
+        m: azimuthal order
+        lamb: wavelength (SI)
         r:
         theta:
         dA:
@@ -119,8 +118,8 @@ def cylindrical_to_cartesian(r, theta, Et, Er):
     return Ex, Ey
 
 
-def calc_eff_ind(nu, a, n, m, lamb):
-    """Approximate effective index of hollow capillary
+def calc_eff_ind(nu: float, a: float, n: int, m: int, lamb: float):
+    """Approximate effective index of hollow capillary.
    
     Args:
         nu: refractive index of wall

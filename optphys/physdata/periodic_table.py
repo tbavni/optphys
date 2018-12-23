@@ -5,7 +5,7 @@ idiosynchrasies:
     g/cm^3 instead of SI
     gas density specified at liquids boiling temperature
 """
-from physdata import SI
+from optphys.physdata import SI
 import periodictable
 
 def mass_density(symbol):
