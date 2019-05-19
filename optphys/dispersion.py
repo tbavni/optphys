@@ -115,7 +115,7 @@ def optimal_propagation(omega,Ef,betaf,l_min,l_max):
         Et=ftd.inv_trans(Ef*np.exp(1j*betaf*l))
         It=(Et*Et.conj()).real
         return It.max(axis=-1)
-    ls=np.linspace(l_min,l_max,1e2)[:,None]
+    ls=np.linspace(l_min,l_max,100)[:,None]
     Itl=max_It(ls)
     lsi=Itl.argmax()
     l_guess=ls[lsi]

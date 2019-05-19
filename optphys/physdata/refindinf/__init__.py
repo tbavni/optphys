@@ -65,7 +65,7 @@ def load_page(page):
     string=''
     for line in file:
         string=string+line.replace('\t','')
-    ref=yaml.load(string)
+    ref=yaml.load(string, Loader=yaml.FullLoader)
     return ref 
     
 class TabNKEntry:
