@@ -8,13 +8,13 @@ t = np.linspace(-200, 200, 1000)
 omega_0 = 2.35
 T0 = 20
 w = 0.3
-Et = np.exp(-0.5*(t/T0)**2 - 1j*omega_0*t)
+Et = np.exp(-0.5 * (t / T0) ** 2 - 1j * omega_0 * t)
 omega = fourier.conj_axis(t, 0.5, 'start')
 Ef = fourier.trans(t, 1, Et, omega)
 y = np.linspace(-1, 1, 100)[:, None]
-My = np.exp(-(y/w)**2)
-Eyt = Et*My
-Eyf = Ef*My
+My = np.exp(-(y / w) ** 2)
+Eyt = Et * My
+Eyf = Ef * My
 
 
 def test_StackedTemoral(qtbot):

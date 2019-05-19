@@ -7,18 +7,18 @@ def test_calc_mode():
     lamb = 1.8e-6
     radius = 50e-6
     num_points = 50
-    x = np.linspace(-1, 1, num_points)*radius
-    y = np.linspace(-1, 1, num_points)[:, None]*radius
-    r = (x**2 + y**2)**0.5
+    x = np.linspace(-1, 1, num_points) * radius
+    y = np.linspace(-1, 1, num_points)[:, None] * radius
+    r = (x ** 2 + y ** 2) ** 0.5
     theta = np.arctan2(x, y)
-    dA = (x[1] - x[0])*(y[1, 0] - y[0, 0])
+    dA = (x[1] - x[0]) * (y[1, 0] - y[0, 0])
     ##
     M = 5
     N = 3
     fields = []
     for m in np.arange(1, M + 1):
         for n in np.arange(-N, N + 1):
-            for theta0 in (0, np.pi/2):
+            for theta0 in (0, np.pi / 2):
                 fields.append(hc.calc_mode(1.5, radius, n, m, lamb, r, theta, dA, theta0))
     rows = []
     for f1 in fields:

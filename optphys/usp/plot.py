@@ -165,14 +165,14 @@ class Temporal(IntensityPhase):
                 k = 'x'
             elif k == 'Et':
                 k = 'y'
-                iv = abs(v)**2
-                pv = np.angle(v)/math.pi
+                iv = abs(v) ** 2
+                pv = np.angle(v) / math.pi
             elif k == 'It':
                 k = 'y'
                 pv = None
             elif k == 'phit':
                 k = 'y'
-                pv = pv/math.pi
+                pv = pv / math.pi
                 iv = None
             if iv is not None:
                 ikwargs[k] = iv
@@ -201,19 +201,19 @@ class Frequency(IntensityPhase):
             if k == 'omega':
                 k = 'x'
                 if self.domain == 'lambda':
-                    v = 2*math.pi*self.c/v
+                    v = 2 * math.pi * self.c / v
                 iv = v
                 pv = v
             elif k == 'Ef':
                 k = 'y'
-                iv = abs(v)**2
-                pv = np.angle(v)/math.pi
+                iv = abs(v) ** 2
+                pv = np.angle(v) / math.pi
             elif k == 'If':
                 k = 'y'
                 pv = None
             elif k == 'phif':
                 k = 'y'
-                pv = pv/math.pi
+                pv = pv / math.pi
                 iv = None
             if iv is not None:
                 ikwargs[k] = iv
@@ -345,12 +345,12 @@ class Frequency2D(Frequency):
             elif k == 'y':
                 axes[1] = v
             elif k == 'Ef':
-                intensity = abs(v)**2
-                phase = np.angle(v)/math.pi
+                intensity = abs(v) ** 2
+                phase = np.angle(v) / math.pi
             elif k == 'If':
                 intensity = v
             elif k == 'phif':
-                phase = v/math.pi
+                phase = v / math.pi
         # If only one axis given, replace other with stored value
         if any(axis is not None for axis in axes):
             for n in range(2):
@@ -387,12 +387,12 @@ class Temporal2D(Temporal):
             elif k == 'y':
                 axes[1] = v
             elif k == 'Et':
-                intensity = abs(v)**2
-                phase = np.angle(v)/math.pi
+                intensity = abs(v) ** 2
+                phase = np.angle(v) / math.pi
             elif k == 'It':
                 intensity = v
             elif k == 'phit':
-                phase = v/math.pi
+                phase = v / math.pi
         # If only one axis given, replace other with stored value
         if any(axis is not None for axis in axes):
             for n in range(2):
