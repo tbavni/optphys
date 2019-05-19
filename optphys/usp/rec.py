@@ -8,7 +8,7 @@ using usp.plot.
 """
 import logging,math
 from scipy.interpolate import interp1d
-from scipy.misc import factorial
+from scipy.special import factorial
 import numpy as np
 from PyQt5 import QtGui,QtCore
 import pyqtgraph_extended as pg
